@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AngularJS</title>
+
+    </head>
+    <!-- directive -->
+    <body ng-app="myApp">
+        <!-- ng-init="a=5; b=6; fname='Chandler'; lname='Bing';even=[2,4,6,8]; numbers=[0,1,2,3,4,5,6,7,8]"> -->
+
+        <script
+            type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="review.js"></script>
+
+        <!-- expression -->
+        <!-- {{ "Hello" + "There" }}
+        <p>The area is {{a*b}}</p>
+        <p>The area is <span ng-bind="a*b"></span></p> -->
+        <!-- ng-bind is better than {{}} they have similar functionality -->
+
+        <!-- <p>Full name is {{ fname + " " + lname }}</p>
+
+        <p>{{even[2]}}</p>
+        <p><span ng-bind="even[1]"></span> </p>
+
+        <p>Number is {{numbers[0]}}</p>
+        <p>Number is {{numbers[1]}}</p>
+        <p>Number is {{numbers[2]}}</p>
+
+        <p ng-repeat="number in numbers">Number in array [{{number}}] is
+            {{number}}</p> -->
+
+        <!-- controller, help us to get data onto view, it is where we define value and function  -->
+        <!-- <div ng-init="name= 'Chandler Bing'">
+            {{name}}
+        </div> -->
+
+        <div ng-controller="myController">
+
+            <!-- <p ng-hide="isSpy">Firstname is {{firstName}}</p>
+            <p ng-hide="isSpy">Lastname is {{lastName}}</p>
+            <p ng-hide="isSpy">Fullname is {{fullName()}}</p>
+            <p ng-show="isSpy">Codename is {{codename}}</p> -->
+
+            <!-- display data from array -->
+            <!-- <div ng-repeat="employee in employees | orderBy: '-salary'">
+
+                <p>Firstname is {{ employee.fname | uppercase | limitTo:3 }}</p>
+                <p>Lastname is {{ employee.lname | lowercase }}</p>
+                <p>Salary is {{ employee.salary | currency }}</p>
+
+                <hr />
+            </div> -->
+
+            <button ng-click="count=count+1; toggleShow()"> Click </button>
+            <p ng-show="show">Count is {{count}}</p>
+
+        </div>
+
+    </body>
+
+</html>

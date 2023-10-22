@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>AngularJS</title>
+
+        <style type="text/css">
+            .ng-invalid.ng-dirty{
+                border-color: red;
+            }
+            .ng-valid.ng-dirty{
+                border-color: green;
+            }
+            input,textarea{
+                border: 2px solid;
+            }
+
+        </style>
+
+    </head>
+    <body ng-app="myApp">
+
+        <script
+            type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="/app.js"></script>
+
+        <div ng-controller="myController">
+
+            <h2>Reviews</h2>
+            <div ng-repeat="review in reviews">
+                <div style="background-color: #EEEEEE;">
+                    <p>{{review.comment}}</p>
+                    <p>{{review.by}}</p>
+                </div>
+            </div>
+
+            <!-- novalidate: disable browser validation -->
+            <form name="reviewForm" ng-submit="reviewForm.$valid && addReview()"
+                novalidate>
+
+                <p>{{form.comment}}</p>
+                <p>{{form.by}}</p>
+
+                <label>Comment</label><br />
+                <textarea ng-model="form.comment" required> </textarea><br />
+
+                <label>Author</label><br />
+                <input ng-model="form.by" type="email" required><br />
+
+                <input type="submit" value="Add Review"><br />
+
+                <!-- specify valid status -->
+                <p>Form valid? {{reviewForm.$valid}}</p>
+                <!--  <div ng-include="userinfo.html"> </div> -->
+
+                <div userinformation></div>
+                <!-- <userinformation></userinformation> -->
+
+            </form>
+
+        </div>
+    </body>
+</html>
